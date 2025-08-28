@@ -1,0 +1,7 @@
+- PROJECT_GOALS.md 존재 (프롬프트 → 자체 학습 모델).
+- 리포지토리 구조 생성; .gitignore 추가됨.
+- Python venv 준비 완료; Torch 설치됨 (RTX 4080에 CUDA 활성화됨).
+- docs/ENV.md 및 docs/TRAINING_CFG.md 파일 존재.
+- docs/dataset_card.md 스캐폴드 작성 완료.
+- Pre-commit 후크 설치 및 통과됨.
+- 연기 테스트에서 render/out/test.wav 및 test.mid 파일이 성공적으로 생성됨.
