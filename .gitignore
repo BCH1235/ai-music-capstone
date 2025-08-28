@@ -1,0 +1,18 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Node / web
+node_modules/
+dist/
+build/
+
+# OS / IDE / secrets
+.DS_Store
+.vscode/
+*.env
+*.log
+
+render/out/*
