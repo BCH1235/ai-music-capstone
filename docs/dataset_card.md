@@ -1,25 +1,26 @@
-# µ¥ÀÌÅÍ¼Â Ä«µå (1.7´Ü°è)
+# Dataset Card (Step 1.7)
 
-»ç¿ë ¸ñÀû
-- 30ÃÊ ±æÀÌ BGM Á¦ÀÛÀ» À§ÇÑ ÀÚÃ¼ ±âÈ£ »ı¼º±â(¸á·Îµğ Æ®·£½ºÆ÷¸Ó + µå·³-±×·çºê VAE) ÇĞ½À.
-- ÇĞ½À µ¥ÀÌÅÍ´Â **MIDI Àü¿ë**ÀÔ´Ï´Ù. °á°ú¹°Àº °íÁ¤µÈ »ç¿îµåÆùÆ®¸¦ »ç¿ëÇÏ¿© ¿Àµğ¿À·Î ·»´õ¸µµË´Ï´Ù.
+Intended use
+- Train our own symbolic generators (Melody Transformer + Drum-Groove VAE) for 30-second BGM.
+- Training data is MIDI only. Outputs are rendered to audio with fixed SoundFonts.
 
-´ÜÃà ¸ñ·Ï (´Ù¿î·Îµå Àü ¶óÀÌ¼±½º È®ÀÎ ÇÊ¿ä)
-- MAESTRO (MIDI-only) ? ¶óÀÌ¼±½º: CC BY-NC-SA 4.0 ? ¿ëµµ: ¸á·Îµğ/È­¼º (ÇÇ¾Æ³ë). ÃâÃ³ URL: TODO
-- Groove MIDI (GMD) ? ¶óÀÌ¼±½º: CC BY 4.0 ? ¿ëµµ: ÀÎ°£ ¿¬ÁÖ µå·³. ÃâÃ³ URL: TODO
-- E-GMD ? ¶óÀÌ¼±½º: CC BY 4.0 ? ¿ëµµ: ÀÎ°£ ¿¬ÁÖ µå·³ (È®Àå). ÃâÃ³ URL: TODO
-- Slakh2100 ? ¶óÀÌ¼±½º: CC BY-SA 4.0 ? ¿ëµµ: ¼±ÅÃÀû ¾Ç±â ÇÁ·Î±×·¥ ÈùÆ® / ·»´õ¸µ ÂüÁ¶. ÃâÃ³ URL: TODO
-- GiantMIDI-Piano (¼±ÅÃ »çÇ×) ? ¶óÀÌ¼±½º/¾à°ü: **»ç¿ë Àü È®ÀÎ ÇÊ¿ä** ? ¿ëµµ: ¸á·Îµğ/È­¼º (Å¬·¡½Ä). ÃâÃ³ URL: TODO
+Datasets shortlist (verify licenses before download)
+- MAESTRO (MIDI-only) â€” License: CC BY-NC-SA 4.0 â€” Use: melody/harmony (piano). Source URL: TODO
+- Groove MIDI (GMD) â€” License: CC BY 4.0 â€” Use: human drums. Source URL: TODO
+- E-GMD â€” License: CC BY 4.0 â€” Use: human drums (expanded). Source URL: TODO
+- Slakh2100 â€” License: CC BY-SA 4.0 â€” Use: optional instrument hints / render refs. Source URL: TODO
+- GiantMIDI-Piano (optional) â€” License/terms: verify â€” Use: melody/harmony (classical). Source URL: TODO
 
-Æ÷ÇÔ ±âÁØ
-- ¸íÈ®ÇÑ Å¸ÀÌ¹ÖÀ» °¡Áø MIDI ÆÄÀÏ; 4/4 ¹ÚÀÚ ¼±È£; ±æÀÌ ¡Ã 4¸¶µğ.
-Á¦¿Ü ±ÔÄ¢
-- ¸í¹éÇÑ ¶óÀÌ¼±½º Ãæµ¹; ¼Õ»óµÈ Å¸ÀÌ¹Ö ¶Ç´Â ±Ø½ÉÇÑ ÅÛÆ÷ º¯È­°¡ ÀÖ´Â ¾Ç°î.
+Inclusion criteria
+- Clean MIDI with clear timing; 4/4 preferred; length â‰¥ 4 bars.
 
-ÀüÃ³¸® °èÈ¹ (¿ä¾à)
-- Á¦ÇÑµÈ BPM ¼¼Æ®·Î Á¤±ÔÈ­; 16ºĞÀ½Ç¥·Î ¾çÀÚÈ­; 4/8/16¸¶µğ Å©·Ó ÃßÃâ.
-- Å°/½ºÄÉÀÏ °¨Áö Ãß°¡; ¸á·Îµğ ¹× µå·³ ¼­ºê¼ÂÀ» À§ÇÑ ÅäÅ« ÆÄÀÏ ÀÛ¼º.
+Exclusion rules
+- Licensing conflicts; corrupted timing; extreme tempo instability.
 
-À±¸® ¹× ÁöÀû Àç»ê±Ç
-- ¿¬±¸/±³À°¿ëÀ¸·Î¸¸ »ç¿ë; ÃâÃ³ ¹× ÀúÀÛ±Ç Ç¥±â ¸ñ·ÏÀ» À¯ÁöÇÕ´Ï´Ù.
-- ¿øº» ÀúÀÛ±Ç ÀÚ·á´Â Àç¹èÆ÷ÇÏÁö ¾Ê½À´Ï´Ù.
+Preprocessing plan
+- Normalize BPM to a small set; quantize to 16th notes; extract 4/8/16-bar crops.
+- Detect key/scale; write token files for melody and drum subsets.
+
+Ethics & IP
+- Research/education use only; keep a list of sources and attributions.
+- Do not redistribute original copyrighted material.

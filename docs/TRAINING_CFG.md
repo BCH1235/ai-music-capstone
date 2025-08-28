@@ -1,10 +1,11 @@
-# 학습 설정 (1.6단계)
+# Training Config (Step 1.6)
+
 hardware:
   cuda: true
   gpu_name: NVIDIA GeForce RTX 4080
 common:
   seq_len_tokens: 1024
-  precision: "amp_fp16"
+  precision: amp_fp16
   grad_clip: 1.0
   save_every_steps: 1000
   val_every_steps: 500
