@@ -1,0 +1,5 @@
+MAESTRO_MIDI_ONLY_URL=https://storage.googleapis.com/magentadata/datasets/maestro/v3.0.0/maestro-v3.0.0-midi.zip
+GMD_URL=https://storage.googleapis.com/magentadata/datasets/groove/groove-v1.0.0-midionly.zip
+E_GMD_URL=https://storage.googleapis.com/magentadata/datasets/e-gmd/e-gmd-v1.0.0-midi.zip
+SLAKH2100_URL=
+GIANTMIDI_PIANO_URL=
