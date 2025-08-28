@@ -16,3 +16,13 @@ build/
 *.log
 
 render/out/*
+
+# 대용량 데이터/아티팩트 파일 무시
+data/downloads/*
+data/tmp/*
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.wav
+*.mp3
